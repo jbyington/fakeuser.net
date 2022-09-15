@@ -1,0 +1,50 @@
+{
+  "name": "fakeuser.net",
+  "version": "1.0.0",
+  "description": "A random user generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh Byington",
+  "license": "ISC",
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules",
+      "*.conf"
+    ],
+    "verbose": true,
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,html"
+  },
+  "dependencies": {
+    "@small-tech/express-ws": "^1.0.1",
+    "bunyan": "^1.8.15",
+    "bunyan-syslog": "^0.3.4",
+    "child_process": "^1.0.2",
+    "connect-redis": "^4.0.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto-random-string": "^3.1.0",
+    "csurf": "^1.10.0",
+    "easyxml": "^2.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.0",
+    "file-loader": "^4.1.0",
+    "knex": "^2.3.0",
+    "line-reader": "^0.4.0",
+    "log-timestamp": "^0.3.0",
+    "mariadb": "^2.2.0",
+    "nunjucks": "^3.2.3",
+    "nunjucks-date": "^1.5.0",
+    "redis": "^4.3.1",
+    "sequelize": "^5.21.3",
+    "uuid": "^8.3.2",
+    "ws": "^6.2.1",
+    "yargs": "^15.1.0"
+  }
+}

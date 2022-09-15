@@ -1,0 +1,26 @@
+#!/bin/bash
+
+ARCH=$(uname -m)
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
+#
+#	CHECK TO SEE IF SSH KEY EXISTS
+#	CREATE KEY IF IT DOESN'T
+#
+
+if [ ! -e ~/.ssh/id_rsa_fakeuser ]; then 
+	echo "Generating Keys..."
+	sh ./utils/sskeygen.sh
+fi
+
+#
+#	START SHELL WITH KEY
+#
+
+echo "Keys found. Running..."
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_rsa_fakeuser
+
+
+node $SCRIPTPATH/app.js --node=node $@
